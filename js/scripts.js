@@ -3,7 +3,7 @@ $(document).ready(function() {
 
 	/* Enabling the menu-bar to toggle */
 	var hidden = true;
-	var menuWidth = "200px";
+	var menuWidth = "225px";
 	var collapsedWidth = "60px";
 
 	$("#menu").width(collapsedWidth); // Menu is initially collapsed
