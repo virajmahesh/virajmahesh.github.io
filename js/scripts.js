@@ -1,31 +1,46 @@
 // Executed when page loads
 $(document).ready(function() {
+	var menu = new Menu(); // Creating a new menu
+});
 
-	/* Enabling the menu-bar to toggle */
-	var hidden = true;
-	var menuWidth = "225px";
-	var collapsedWidth = "60px";
+Menu = function() {
+	// Get a handle to elements
+	this.menu = $("#menu");
+	this.content = $("#content-container");
+	this.toggle = $("#menu-toggle");
 
-	$("#menu").width(collapsedWidth); // Menu is initially collapsed
-	$(".menu-text").hide();
-	$("#content-container").css('left', $("#menu").width());
+	this.collapsedWidth = "60px";
+	this.expandedWidth = "225px";
+	this.hidden = true;
 
-	/* Callback every time the mouse position changes */
-	$(document).bind("mousemove", function(e) {
-		/* Toggling menu bar if necessary */
-		if (e.pageX < 60 && hidden) {
-			$("#menu").animate({width: menuWidth});
-			$(".menu-text").width(menuWidth);
-			$(".menu-text").show();
-			//$("#content-container").animate({'left': 200});
-			hidden = false;
+	this.menu.width(this.collapsedWidth);
+	this.content.css('left', this.collapsedWidth);
+	this.setCallback();
+}
+
+Menu.prototype.collapse = function() {
+	this.menu.animate({width: this.collapsedWidth});
+	this.content.animate({left: this.collapsedWidth});
+}
+
+Menu.prototype.expand = function() {
+	this.menu.animate({width: this.expandedWidth});
+	this.content.animate({left: this.expandedWidth});
+}
+
+Menu.prototype.setCallback = function() {
+	var that = this;
+	this.toggle.click(function() {
+		console.log("clicked");
+		if (that.hidden) {
+			that.expand();
+			that.hidden = false;
 		}
-		else if(e.pageX > 200 && !hidden) {
-			$("#menu").animate({width: collapsedWidth});
-			$(".menu-text").hide();
-			//$("#content-container").animate({'left': 60});
-			hidden = true;
+		else if (!that.hidden) {
+			console.log("expanded");
+			that.collapse();
+			that.hidden = true;
 		}
 	});
+}
 
-});
