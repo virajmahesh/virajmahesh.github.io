@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 	$("#menu").width(collapsedWidth); // Menu is initially collapsed
 	$(".menu-text").hide();
-	$("#content-container").css('left', $("#menu").width());
+	//$("#content-container").css('left', $("#menu").width());
 
 	/* Callback every time the mouse position changes */
 	$(document).bind("mousemove", function(e) {
@@ -17,13 +17,13 @@ $(document).ready(function() {
 			$("#menu").animate({width: menuWidth});
 			$(".menu-text").width(menuWidth);
 			$(".menu-text").show();
-			$("#content-container").animate({'left': 200});
+			//$("#content-container").animate({'left': 200});
 			hidden = false;
 		}
 		else if(e.pageX > 200 && !hidden) {
 			$("#menu").animate({width: collapsedWidth});
 			$(".menu-text").hide();
-			$("#content-container").animate({'left': 60});
+			//$("#content-container").animate({'left': 60});
 			hidden = true;
 		}
 	});
