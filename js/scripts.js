@@ -8,24 +8,28 @@ Menu = function() {
 	this.menu = $("#menu");
 	this.content = $("#content-container");
 	this.toggle = $("#menu-toggle");
+	this.menuItems = $(".menu-text");
 
+	// Setting the menu properties
 	this.collapsedWidth = "60px";
 	this.expandedWidth = "225px";
 	this.hidden = true;
 
+	// The menu is initially collapsed
 	this.menu.width(this.collapsedWidth);
 	this.content.css('left', this.collapsedWidth);
 	this.setCallback();
+	this.menuItems.hide();
 }
 
 Menu.prototype.collapse = function() {
 	this.menu.animate({width: this.collapsedWidth});
-	this.content.animate({left: this.collapsedWidth});
+	this.menuItems.hide();
 }
 
 Menu.prototype.expand = function() {
 	this.menu.animate({width: this.expandedWidth});
-	this.content.animate({left: this.expandedWidth});
+	this.menuItems.show();
 }
 
 Menu.prototype.setCallback = function() {
