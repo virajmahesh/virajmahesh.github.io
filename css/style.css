@@ -45,12 +45,14 @@ body {
 	text-decoration: none;
 }
 
-.content {
-	/* Houses the main content */
-	font-weight: 400;
-	padding-right: 30px;
-	padding-left: 30px;
-	padding-top: 20px;
+.content-overlay {
+	/* Overlay for the content, to help dim it */
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 50;
+	background: black;
+	opacity: 0.0;
 }
 
 .content-container {
@@ -58,7 +60,16 @@ body {
 	width: calc(100% - 60px);
 	min-width: 0px;
 	top: 0;
+	left: 60;
 	z-index: 0;
+}
+
+.content {
+	/* Houses the main content */
+	font-weight: 400;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-top: 20px;
 }
 
 #heading {
@@ -88,6 +99,6 @@ body {
 	right: 0; left: 0;
 	text-align: justify;
 	font-size: 15px;
-	line-height: 35px;
+	line-height: 40px;
 }
 
