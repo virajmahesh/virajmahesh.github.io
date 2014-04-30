@@ -9,6 +9,7 @@ function Menu() {
 	Menu.menu = $("#menu");
 	Menu.toggle = $(".menu-image");
 	Menu.menuItems = $(".menu-text");
+	Menu.menuItemContainers = $(".item-container");
 
 	// Setting the menu properties
 	Menu.collapsedWidth = "60px";
@@ -17,7 +18,7 @@ function Menu() {
 
 	// The menu is initially collapsed
 	Menu.menu.width(Menu.collapsedWidth);
-	Menu.setCallback();
+	Menu.setCallbacks();
 	Menu.menuItems.hide();
 }
 
@@ -31,20 +32,26 @@ Menu.expand = function() {
 	Menu.menuItems.show();
 }
 
-Menu.setCallback = function() {
-	Menu.toggle.mouseover(function() {
-		if (Menu.hidden) {
-			Menu.expand();
-			Menu.hidden = false;
-			Content.dim();
-		}
-	});
+Menu.setCallbacks = function() {
 	Menu.menu.mouseleave(function() {
 		if (!Menu.hidden) {
 			Menu.collapse();
 			Menu.hidden = true;
 			Content.light();
 		}
+	});
+
+	Menu.menuItemContainers.mouseover(function() {
+		if (Menu.hidden) {
+			Menu.expand();
+			Menu.hidden = false;
+			Content.dim();
+		}
+		$(this).css("background-color", "rgb(29, 29, 50)");
+	});
+
+	Menu.menuItemContainers.mouseleave(function() {
+		$(this).css("background-color", "rgb(51, 51, 102)");
 	});
 }
 
