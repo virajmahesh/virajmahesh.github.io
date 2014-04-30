@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 	$("#menu").width(collapsedWidth); // Menu is initially collapsed
 	$(".menu-text").hide();
-	//$("#content-container").css('left', $("#menu").width());
+	$("#content-container").css('left', $("#menu").width());
 
 	/* Callback every time the mouse position changes */
 	$(document).bind("mousemove", function(e) {
