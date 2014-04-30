@@ -1,0 +1,89 @@
+body {
+	position: relative;
+	margin: 0px; /* No spacing between the body and the edge of the browser window */
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	background: white;
+}
+
+
+.menu {
+	/* Contains the entire menu */
+	background: rgb(51, 51, 102); /* Light blue background */
+	white-space: nowrap; /* No text wrapping */
+	width: 60px;
+	height: 100%;
+}
+
+.menu-container {
+	/* Contains all the menu items and seperates them from the window wall */
+	padding-top: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+}
+
+.menu-item {
+	/* Styling for each individual item in a menu */
+	font-size: 15px;
+	color: white;
+	margin-bottom: 30px;
+}
+
+.menu-image {
+	/* An image next to each menu entry */
+	width: 20px;
+	height: 20px;
+	vertical-align: bottom;
+	margin-right: 30px;
+}
+
+.menu-link {
+	/* A link within a menu */
+	color: white;
+	text-decoration: none;
+}
+
+.content {
+	/* Houses the main content */
+	font-weight: 400;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-top: 20px;
+}
+
+.content-container {
+	position: absolute;
+	width: 100%;
+	top: 0;
+}
+
+#heading {
+	text-align: center;
+	font-size: 35px;
+	font-weight: bold;
+}
+
+#sub-heading {
+	padding-top: 15px;
+	text-align: center;
+}
+
+.glyph {
+	width: 20px;
+	height: 20px;
+	vertical-align: bottom;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.bio {
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 500px;
+	right: 0; left: 0;
+	text-align: justify;
+	font-size: 15px;
+}
+
