@@ -55,7 +55,8 @@ body {
 
 .content-container {
 	position: absolute;
-	width: 100%;
+	width: calc(100% - 60px);
+	min-width: 0px;
 	top: 0;
 }
 
