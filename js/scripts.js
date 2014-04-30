@@ -31,13 +31,11 @@ Menu.prototype.expand = function() {
 Menu.prototype.setCallback = function() {
 	var that = this;
 	this.toggle.click(function() {
-		console.log("clicked");
 		if (that.hidden) {
 			that.expand();
 			that.hidden = false;
 		}
 		else if (!that.hidden) {
-			console.log("expanded");
 			that.collapse();
 			that.hidden = true;
 		}
