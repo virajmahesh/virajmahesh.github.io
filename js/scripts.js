@@ -7,7 +7,7 @@ $(document).ready(function() {
 function Menu() {
 	// Get a handle to elements
 	Menu.menu = $("#menu");
-	Menu.toggle = $("#menu-toggle");
+	Menu.toggle = $(".menu-image");
 	Menu.menuItems = $(".menu-text");
 
 	// Setting the menu properties
@@ -51,7 +51,6 @@ Menu.setCallback = function() {
 Content = function() {
 	Content.contentContainer = $("#content-container");
 	Content.contentOverlay = $("#content-overlay");
-	console.log(Content.contentOverlay);
 }
 
 Content.dim = function() {

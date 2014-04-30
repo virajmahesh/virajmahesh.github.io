@@ -18,17 +18,20 @@ body {
 
 .menu-container {
 	/* Contains all the menu items and seperates them from the window wall */
-	padding-top: 30px;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-top: 20px;
 	padding-bottom: 10px;
 }
 
+.item-container {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
 .menu-item {
 	/* Styling for each individual item in a menu */
 	font-size: 15px;
 	color: white;
-	margin-bottom: 30px;
 }
 
 .menu-image {
@@ -69,7 +72,7 @@ body {
 	font-weight: 400;
 	padding-right: 30px;
 	padding-left: 30px;
-	padding-top: 20px;
+	padding-top: 30px;
 }
 
 #heading {
