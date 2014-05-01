@@ -1,7 +1,7 @@
 body {
 	position: relative;
 	margin: 0px; /* No spacing between the body and the edge of the browser window */
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-weight: 300;
 	background: white;
 }
@@ -49,6 +49,11 @@ body {
 	text-decoration: none;
 }
 
+.top-link {
+	color: #FFD700;
+	font-weight: 700;
+}
+
 .content-overlay {
 	/* Overlay for the content, to help dim it */
 	position: fixed;
@@ -73,7 +78,7 @@ body {
 	font-weight: 400;
 	padding-right: 30px;
 	padding-left: 30px;
-	padding-top: 30px;
+	padding-top: 50px;
 }
 
 #heading {
@@ -98,11 +103,15 @@ body {
 .bio {
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 50px;
+	padding-top: 40px;
 	width: 535px;
 	right: 0; left: 0;
 	text-align: justify;
 	font-size: 15px;
 	line-height: 40px;
+}
+
+.footer {
+	border: black solid;
 }
 

@@ -17,6 +17,8 @@ Menu = function() {
 	Menu.menu.width(Menu.collapsedWidth);
 	Menu.populateMenuItems();
 	Menu.setCallback();
+
+	MenuItem.hide(Menu.items);
 };
 
 Menu.collapse = function() {
@@ -76,9 +78,6 @@ MenuItem = function(object) {
 	this.text = this.object.children().children(".menu-text");
 
 	this.setCallback();
-
-	MenuItem.allItems = MenuItem.allItems || new Array();
-	MenuItem.allItems.push(this); // Add this to list of all items
 
 	this.inverted = false;
 	this.active = false;
