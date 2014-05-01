@@ -69,15 +69,24 @@ Content.light = function() {
 // Represents a menu item
 MenuItem = function(object) {
 	this.object = $(object);
-	this.allChildren = this.object.children();
-	this.image = this.object.children(".menu-image");
-	this.text = this.object.children(".menu-text");
+	this.allChildren = this.object.children().children();
+	this.image = this.object.children().children(".menu-image");
+	this.text = this.object.children().children(".menu-text");
 
 	this.setCallback();
+
+	MenuItem.allItems = MenuItem.allItems || new Array();
+	MenuItem.allItems.push(this); // Add this to list of all items
+
+	this.inverted = false;
 };
 
 MenuItem.prototype.darkenBackground = function() {
 	this.object.css("background-color", "rgb(29, 29, 50)");
+};
+
+MenuItem.prototype.lightenBackground = function() {
+	this.object.css("background-color", "rgb(51, 51, 102)");
 };
 
 MenuItem.prototype.setCallback = function() {
@@ -88,7 +97,7 @@ MenuItem.prototype.setCallback = function() {
 	});
 
 	this.object.mouseleave(function() {
-		that.object.css("background-color", "rgb(51, 51, 102)");
+		that.lightenBackground();
 	});
 };
 
@@ -114,5 +123,23 @@ MenuItem.show = function(itemList) {
 // Show this object
 MenuItem.prototype.show = function() {
 	this.text.show();
+};
+
+MenuItem.prototype.invert = function() {
+	if (!this.inverted)	{
+		this.object.css("background-color", "rgb(256, 256, 256)");
+		var newSrc = this.image.attr("src").replace(".png", "-invert.png");
+		this.image.attr("src", newSrc);
+		this.inverted = true;
+	}
+};
+
+MenuItem.prototype.revert = function() {
+	if (this.inverted) {
+		this.object.css("background-color", "rgb(51, 51, 102)");
+		var newSrc = this.image.attr("src").replace("-invert.png", ".png");
+		this.image.attr("src", newSrc);
+		this.inverted = false;
+	}
 }
 
