@@ -22,16 +22,22 @@ function Menu() {
 Menu.collapse = function() {
 	Menu.menu.animate({width: Menu.collapsedWidth});
 	MenuItem.hide(Menu.items);
-	console.trace();
 };
 
 Menu.expand = function() {
-	console.trace();
 	Menu.menu.animate({width: Menu.expandedWidth});
 	MenuItem.show(Menu.items);
 };
 
 Menu.setCallback = function() {
+	Menu.menu.mouseover(function() {
+		if (Menu.hidden) {
+			Menu.expand();
+			Menu.hidden = false;
+			Content.dim();
+			MenuItem.show(Menu.items);
+		}
+	});
 	Menu.menu.mouseleave(function() {
 		if (!Menu.hidden) {
 			Menu.collapse();
@@ -80,13 +86,8 @@ MenuItem.prototype.darkenBackground = function() {
 
 MenuItem.prototype.setCallback = function() {
 	var that = this;
+
 	this.object.mouseover(function() {
-		console.log(this);
-		if (Menu.hidden) {
-			Menu.expand();
-			Menu.hidden = false;
-			Content.dim();
-		}
 		that.darkenBackground();
 	});
 
