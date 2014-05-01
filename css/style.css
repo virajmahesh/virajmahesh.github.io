@@ -83,7 +83,7 @@ body {
 }
 
 #sub-heading {
-	padding-top: 15px;
+	padding-top: 30px;
 	text-align: center;
 }
 
@@ -96,9 +96,9 @@ body {
 }
 
 .bio {
-	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 50px;
 	width: 535px;
 	right: 0; left: 0;
 	text-align: justify;

@@ -35,11 +35,13 @@ Menu.setCallback = function() {
 			Menu.expand();
 			Menu.hidden = false;
 			Content.dim();
+			MenuItem.revertActive(Menu.items);
 		}
 		else if (!Menu.hidden && event.pageX >= 225) {
 			Menu.collapse();
 			Menu.hidden = true;
 			Content.light();
+			MenuItem.invertActive(Menu.items);
 		}
 	});
 };
@@ -79,6 +81,12 @@ MenuItem = function(object) {
 	MenuItem.allItems.push(this); // Add this to list of all items
 
 	this.inverted = false;
+	this.active = false;
+
+	if(this.object.hasClass("active")) { // Invert an active object
+		this.active = true;
+		this.invert();
+	}
 };
 
 MenuItem.prototype.darkenBackground = function() {
@@ -93,6 +101,7 @@ MenuItem.prototype.setCallback = function() {
 	var that = this;
 
 	this.object.mouseenter(function() {
+		that.revert();
 		that.darkenBackground();
 	});
 
@@ -141,5 +150,21 @@ MenuItem.prototype.revert = function() {
 		this.image.attr("src", newSrc);
 		this.inverted = false;
 	}
+};
+
+MenuItem.invertActive = function(itemList) {
+	itemList.forEach(function(elem, index, array) {
+		if (elem.active) {
+			elem.invert();
+		}
+	});
+};
+
+MenuItem.revertActive = function(itemList) {
+	itemList.forEach(function(elem, index, array) {
+		if (elem.active) {
+			elem.revert();
+		}
+	});
 }
 
