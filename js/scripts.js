@@ -7,6 +7,9 @@ $(document).ready(function() {
 function Menu() {
 	// Get a handle to elements
 	Menu.menu = $("#menu");
+	Menu.toggle = $(".menu-image");
+	Menu.menuItems = $(".menu-text");
+	Menu.menuItemContainers = $(".item-container");
 
 	// Setting the menu properties
 	Menu.collapsedWidth = "60px";
@@ -15,107 +18,53 @@ function Menu() {
 
 	// The menu is initially collapsed
 	Menu.menu.width(Menu.collapsedWidth);
-	Menu.setCallback();
-	Menu.populateMenuItems();
-};
+	Menu.setCallbacks();
+	Menu.menuItems.hide();
+}
 
 Menu.collapse = function() {
 	Menu.menu.animate({width: Menu.collapsedWidth});
-	MenuItem.hide(Menu.items);
-	console.trace();
-};
+	Menu.menuItems.hide();
+}
 
 Menu.expand = function() {
-	console.trace();
 	Menu.menu.animate({width: Menu.expandedWidth});
-	MenuItem.show(Menu.items);
-};
+	Menu.menuItems.show();
+}
 
-Menu.setCallback = function() {
+Menu.setCallbacks = function() {
 	Menu.menu.mouseleave(function() {
 		if (!Menu.hidden) {
 			Menu.collapse();
 			Menu.hidden = true;
 			Content.light();
-			MenuItem.hide(Menu.items);
 		}
 	});
-};
 
-Menu.populateMenuItems = function() {
-	var allItems = $(".item-container");
-	Menu.items = new Array();
-	allItems.toArray().forEach(function(elem, index, array) {
-		Menu.items.push(new MenuItem(elem)); // Create a new MenuItem out of the element
-	});
-};
-
-// Represents the page content
-Content = function() {
-	Content.contentContainer = $("#content-container");
-	Content.contentOverlay = $("#content-overlay");
-};
-
-Content.dim = function() {
-	Content.contentOverlay.fadeTo("fast", opacity=0.6);
-};
-
-Content.light = function() {
-	Content.contentOverlay.fadeTo("fast", opacity=0.0);
-};
-
-// Represents a menu item
-MenuItem = function(object) {
-	this.object = $(object);
-	this.allChildren = this.object.children();
-	this.image = this.object.children(".menu-image");
-	this.text = this.object.children(".menu-text");
-
-	this.setCallback();
-};
-
-MenuItem.prototype.darkenBackground = function() {
-	this.object.css("background-color", "rgb(29, 29, 50)");
-};
-
-MenuItem.prototype.setCallback = function() {
-	var that = this;
-	this.object.mouseover(function() {
-		console.log(this);
+	Menu.menuItemContainers.mouseover(function() {
 		if (Menu.hidden) {
 			Menu.expand();
 			Menu.hidden = false;
 			Content.dim();
 		}
-		that.darkenBackground();
+		$(this).css("background-color", "rgb(29, 29, 50)");
 	});
 
-	this.object.mouseleave(function() {
-		that.object.css("background-color", "rgb(51, 51, 102)");
+	Menu.menuItemContainers.mouseleave(function() {
+		$(this).css("background-color", "rgb(51, 51, 102)");
 	});
-};
-
-// Hide an entire list of MenuItems
-MenuItem.hide = function(itemList) {
-	itemList.forEach(function(elem, index, array) {
-		elem.hide();
-	});
-};
-
-// Hide this object
-MenuItem.prototype.hide = function() {
-	this.text.hide();
 }
 
-// Show an entire list of MenuItems
-MenuItem.show = function(itemList) {
-	itemList.forEach(function(elem, index, array) {
-		elem.show();
-	});
-};
+Content = function() {
+	Content.contentContainer = $("#content-container");
+	Content.contentOverlay = $("#content-overlay");
+}
 
-// Show this object
-MenuItem.prototype.show = function() {
-	this.text.show();
+Content.dim = function() {
+	Content.contentOverlay.fadeTo("fast", opacity=0.6);
+}
+
+Content.light = function() {
+	Content.contentOverlay.fadeTo("fast", opacity=0.0);
 }
 
