@@ -2,6 +2,7 @@
 $(document).ready(function() {
 	var menu = new Menu(); // Creating a new menu
 	var content = new Content(); // Create a new content
+	var footer = new Footer(); // Create a new footer
 });
 
 Menu = function() {
@@ -165,5 +166,20 @@ MenuItem.revertActive = function(itemList) {
 			elem.revert();
 		}
 	});
-}
+};
 
+Footer = function() {
+	Footer.icons = $(".social-icon");
+	Footer.animateIcons();
+};
+
+Footer.animateIcons = function() {
+	Footer.icons.mouseenter(function() {
+		$(this).css("opacity", 1.0);
+		$(this).animate({width: 55, height: 55}, 200);
+	});
+	Footer.icons.mouseleave(function() {
+		$(this).css("opacity", 0.75);
+		$(this).animate({width: 50, height: 50}, 10);
+	});
+};
