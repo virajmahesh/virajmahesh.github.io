@@ -4,7 +4,7 @@ $(document).ready(function() {
 	var content = new Content(); // Create a new content
 });
 
-function Menu() {
+Menu = function() {
 	// Get a handle to elements
 	Menu.menu = $("#menu");
 
@@ -15,8 +15,8 @@ function Menu() {
 
 	// The menu is initially collapsed
 	Menu.menu.width(Menu.collapsedWidth);
-	Menu.setCallback();
 	Menu.populateMenuItems();
+	Menu.setCallback();
 };
 
 Menu.collapse = function() {
@@ -30,20 +30,16 @@ Menu.expand = function() {
 };
 
 Menu.setCallback = function() {
-	Menu.menu.mouseover(function() {
-		if (Menu.hidden) {
+	$(document).mousemove(function(event) {
+		if (Menu.hidden && event.pageX <= 60) {
 			Menu.expand();
 			Menu.hidden = false;
 			Content.dim();
-			MenuItem.show(Menu.items);
 		}
-	});
-	Menu.menu.mouseleave(function() {
-		if (!Menu.hidden) {
+		else if (!Menu.hidden && event.pageX >= 225) {
 			Menu.collapse();
 			Menu.hidden = true;
 			Content.light();
-			MenuItem.hide(Menu.items);
 		}
 	});
 };
@@ -87,7 +83,7 @@ MenuItem.prototype.darkenBackground = function() {
 MenuItem.prototype.setCallback = function() {
 	var that = this;
 
-	this.object.mouseover(function() {
+	this.object.mouseenter(function() {
 		that.darkenBackground();
 	});
 
