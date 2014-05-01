@@ -180,6 +180,6 @@ Footer.animateIcons = function() {
 	});
 	Footer.icons.mouseleave(function() {
 		$(this).css("opacity", 0.75);
-		$(this).animate({width: 50, height: 50}, 10);
+		$(this).animate({width: 50, height: 50}, 200);
 	});
 };
