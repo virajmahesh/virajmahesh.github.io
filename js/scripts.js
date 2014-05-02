@@ -175,11 +175,12 @@ Footer = function() {
 
 Footer.animateIcons = function() {
 	Footer.icons.mouseenter(function() {
+		// Grow the image but shorten margins
 		$(this).css("opacity", 1.0);
-		$(this).animate({width: 55, height: 55}, 200);
+		$(this).animate({width: 55, height: 55, marginTop: "-=2.5", marginBottom: "-=2.5", marginLeft: "-=2.5", marginRight: "-=2.5"}, 200);
 	});
 	Footer.icons.mouseleave(function() {
 		$(this).css("opacity", 0.75);
-		$(this).animate({width: 50, height: 50}, 200);
+		$(this).animate({width: 50, height: 50, marginTop: "+=2.5", marginBottom: "+=2.5", marginLeft: "+=2.5", marginRight: "+=2.5"}, 200);
 	});
 };
