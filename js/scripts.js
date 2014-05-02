@@ -34,13 +34,21 @@ Menu.expand = function() {
 
 Menu.setCallback = function() {
 	$(document).mousemove(function(event) {
-		if (Menu.hidden && event.pageX <= 60) {
+		if (!Menu.hidden && event.pageX >= 225) {
+			Menu.collapse();
+			Menu.hidden = true;
+			Content.light();
+			MenuItem.invertActive(Menu.items);
+		}
+	});
+	$("#menu-toggle").click(function(event) {
+		if (Menu.hidden) {
 			Menu.expand();
 			Menu.hidden = false;
 			Content.dim();
 			MenuItem.revertActive(Menu.items);
 		}
-		else if (!Menu.hidden && event.pageX >= 225) {
+		else if (!Menu.hidden) {
 			Menu.collapse();
 			Menu.hidden = true;
 			Content.light();
@@ -107,6 +115,9 @@ MenuItem.prototype.setCallback = function() {
 
 	this.object.mouseleave(function() {
 		that.lightenBackground();
+		if (Menu.hidden && that.active) {
+			that.invert();
+		}
 	});
 };
 
