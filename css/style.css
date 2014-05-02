@@ -138,3 +138,42 @@ body {
 .social-link {
 	text-decoration: none;
 }
+
+.project-row {
+	width: 80%;
+	margin-top: 70px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.project {
+	background: #333366;
+	height: 100%;
+	width: 40%;
+	border-radius: 7px;
+	padding: 30px;
+}
+
+.project-left {
+	float: left;
+	margin-left: 20px;
+}
+
+.project-right {
+	float: right;
+	margin-right: 20px;
+}
+
+.project-heading {
+	color: white;
+	text-align: center;
+	font-size: 22px;
+}
+
+.project-desc {
+	color: white;
+	font-size: 16px;
+	line-height: 30px;
+	text-align: justify;
+	padding-top: 10px;
+}
