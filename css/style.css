@@ -9,7 +9,7 @@ body {
 
 .menu {
 	/* Contains the entire menu */
-	position: absolute;
+	position: fixed;
 	background: rgba(51, 51, 102, 1); /* Light blue background */
 	white-space: nowrap; /* No text wrapping */
 	height: 100%;
@@ -140,18 +140,19 @@ body {
 }
 
 .project-row {
-	width: 80%;
+	width: 1000px;
 	margin-top: 70px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .project {
-	background: #333366;
+	background: #43436c;
 	height: 100%;
 	width: 40%;
 	border-radius: 7px;
 	padding: 30px;
+	margin-top: 40px;
 }
 
 .project-left {
