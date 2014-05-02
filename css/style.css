@@ -140,42 +140,35 @@ body {
 	text-decoration: none;
 }
 
-.project-row {
+.row {
 	width: 1000px;
 	margin-top: 50px;
 	margin-left: auto;
 	margin-right: auto;
+	border: red 2px solid;
+	text-align: center;
 }
 
 .project {
+	padding: 20px;
 	background: #43436c;
-	height: 100%;
-	width: 40%;
-	border-radius: 7px;
-	padding: 30px;
-	margin-top: 20px;
+	border-radius: 10px;
+	display: inline-block;
+	color: white;
+	width: 400px;
 }
 
-.project-left {
-	float: left;
-	margin-left: 20px;
+.overlay {
+	border: black 2px solid;
+	display: inline-block;
+	position: relative;
+	z-index: 10;
 }
 
-.project-right {
-	float: right;
+.overlay:nth-child(1) {
 	margin-right: 20px;
 }
 
-.project-heading {
-	color: white;
-	text-align: center;
-	font-size: 22px;
-}
-
-.project-desc {
-	color: white;
-	font-size: 16px;
-	line-height: 30px;
-	text-align: justify;
-	padding-top: 10px;
+.overlay:nth-child(2) {
+	margin-left: 20px;
 }
