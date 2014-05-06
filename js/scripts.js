@@ -3,6 +3,7 @@ $(document).ready(function() {
 	var menu = new Menu(); // Creating a new menu
 	var content = new Content(); // Create a new content
 	var footer = new Footer(); // Create a new footer
+	var projects = new Projects(); // Create a new list of projects
 });
 
 Menu = function() {
@@ -193,5 +194,46 @@ Footer.animateIcons = function() {
 	Footer.icons.mouseleave(function() {
 		$(this).css("opacity", 0.75);
 		$(this).animate({width: 50, height: 50, marginTop: "+=2.5", marginBottom: "+=2.5", marginLeft: "+=2.5", marginRight: "+=2.5"}, 200);
+	});
+};
+
+Project = function(project) {
+	Project.oldBackground = "#43436C";
+	Project.newBackground = "#6868AB";
+	this.project = $(project);
+	this.overlay = $("#" + $(project).attr("id") + "-overlay");
+	this.overlay.hide();
+
+	this.setCallback();
+};
+
+Project.prototype.setCallback = function() {
+	var that = this;
+	this.project.mouseover(function() {
+		console.log("enter");
+		that.project.addClass("blur");
+		that.overlay.slideDown();
+	});
+	this.overlay.mouseleave(function() {
+		console.log("leave");
+		that.overlay.slideUp();
+		that.project.removeClass("blur");
+	});
+};
+
+Projects = function() {
+	Projects.allProjects = $(".project").toArray();
+	Projects.projectList = new Array();
+
+	// Populating projects list
+	Projects.allProjects.forEach(function(elem, index, array) {
+		Projects.projectList.push(new Project(elem));
+	});
+
+	//
+	$(".view-on-github").hover(function(event) {
+		$(this).css("background", "rgba(222, 222, 222, 0.90)");
+	}, function(event) {
+		$(this).css("background", "rgba(222, 222, 222, 0.60)");
 	});
 };
