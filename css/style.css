@@ -163,9 +163,7 @@ body {
 }
 
 .blur {
-	-webkit-filter: blur(2px) contrast(0.4) brightness(1.4);
-	-moz-filter: blur(2px) contrast(0.4) brightness(1.4);
-	-ms-filter: blur(2px) contrast(0.4) brightness(1.4);
+
 }
 
 .overlay {
@@ -175,8 +173,8 @@ body {
 	height: 270px;
 	font-size: 20px;
 	color: white;
-	/*background: rgba(222, 222, 222, 0.85);*/
 	border-radius: 10px;
+	background: rgba(222, 222, 222, 0.85);
 }
 
 .view-on-github {
@@ -192,6 +190,7 @@ body {
     padding-top: 5px;
     color: #43436c;
     background: rgba(222, 222, 222, 1.0);
+    text-decoration: none;
 }
 
 .project-heading {
@@ -202,4 +201,8 @@ body {
 	line-height: 30px;
 	margin-top: 20px;
 	text-align: justify;
+}
+
+a.no-underline {
+	text-decoration: none;
 }
