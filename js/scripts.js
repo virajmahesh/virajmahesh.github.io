@@ -229,11 +229,4 @@ Projects = function() {
 	Projects.allProjects.forEach(function(elem, index, array) {
 		Projects.projectList.push(new Project(elem));
 	});
-
-	//
-	$(".view-on-github").hover(function(event) {
-		$(this).css("background", "rgba(222, 222, 222, 0.90)");
-	}, function(event) {
-		$(this).css("background", "rgba(222, 222, 222, 0.60)");
-	});
 };

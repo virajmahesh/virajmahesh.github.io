@@ -189,7 +189,7 @@ body {
     top: 0; bottom: 0; right: 0; left: 0;
     padding-top: 5px;
     color: #43436c;
-    background: rgba(222, 222, 222, 0.60);
+    background: rgba(222, 222, 222, 1.0);
 }
 
 .project-heading {
