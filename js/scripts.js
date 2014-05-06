@@ -212,11 +212,11 @@ Project.prototype.setCallback = function() {
 	this.project.mouseover(function() {
 		console.log("enter");
 		that.project.addClass("blur");
-		that.overlay.slideDown();
+		that.overlay.fadeIn();
 	});
 	this.overlay.mouseleave(function() {
 		console.log("leave");
-		that.overlay.slideUp();
+		that.overlay.fadeOut();
 		that.project.removeClass("blur");
 	});
 };
@@ -228,5 +228,11 @@ Projects = function() {
 	// Populating projects list
 	Projects.allProjects.forEach(function(elem, index, array) {
 		Projects.projectList.push(new Project(elem));
+	});
+
+	$(".view-on-github").hover(function(event) {
+		$(this).css("background", "rgba(222, 222, 222, 0.90)");
+	}, function(event) {
+		$(this).css("background", "rgba(222, 222, 222, 0.60)");
 	});
 };
