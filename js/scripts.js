@@ -210,13 +210,11 @@ Project = function(project) {
 Project.prototype.setCallback = function() {
 	var that = this;
 	this.project.mouseover(function() {
-		console.log("enter");
 		that.project.addClass("blur", 200);
 		that.project.css("color", "rgba(0, 0, 0, 0)", 200);
 		that.overlay.fadeIn(200);
 	});
 	this.overlay.mouseleave(function() {
-		console.log("leave");
 		that.overlay.fadeOut(200);
 		that.project.removeClass("blur", 200);
 		that.project.css("color", "white", 200);
@@ -230,5 +228,14 @@ Projects = function() {
 	// Populating projects list
 	Projects.allProjects.forEach(function(elem, index, array) {
 		Projects.projectList.push(new Project(elem));
+	});
+
+	$(".no-underline").mouseenter(function() {
+		$(".view-on-github").css("color", "#43436c");
+		$(".view-on-github").css("background", "white");
+	});
+	$(".no-underline").mouseleave(function() {
+		$(".view-on-github").css("color", "white");
+		$(".view-on-github").css("background", "none");
 	});
 };
