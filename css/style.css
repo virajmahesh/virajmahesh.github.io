@@ -164,6 +164,8 @@ body {
 
 .blur {
 	-webkit-filter: blur(2px) contrast(0.4) brightness(1.4);
+	-moz-filter: blur(2px) contrast(0.4) brightness(1.4);
+	-ms-filter: blur(2px) contrast(0.4) brightness(1.4);
 }
 
 .overlay {
