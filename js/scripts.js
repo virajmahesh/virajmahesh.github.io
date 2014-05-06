@@ -211,13 +211,15 @@ Project.prototype.setCallback = function() {
 	var that = this;
 	this.project.mouseover(function() {
 		console.log("enter");
-		that.project.addClass("blur");
-		that.overlay.fadeIn();
+		that.project.addClass("blur", 200);
+		that.project.css("color", "rgba(0, 0, 0, 0)", 200);
+		that.overlay.fadeIn(200);
 	});
 	this.overlay.mouseleave(function() {
 		console.log("leave");
-		that.overlay.fadeOut();
-		that.project.removeClass("blur");
+		that.overlay.fadeOut(200);
+		that.project.removeClass("blur", 200);
+		that.project.css("color", "white", 200);
 	});
 };
 
