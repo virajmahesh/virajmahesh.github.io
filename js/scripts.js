@@ -3,7 +3,7 @@ $(document).ready(function() {
 	var menu = new Menu(); // Creating a new menu
 	var content = new Content(); // Create a new content
 	var footer = new Footer(); // Create a new footer
-	var projects = new Projects(); // Create a new list of projects
+	var cards = new Cards(); // Create a new list of projects
 });
 
 Menu = function() {
@@ -197,45 +197,18 @@ Footer.animateIcons = function() {
 	});
 };
 
-Project = function(project) {
-	Project.oldBackground = "#43436C";
-	Project.newBackground = "#6868AB";
-	this.project = $(project);
-	this.overlay = $("#" + $(project).attr("id") + "-overlay");
-	this.overlay.hide();
-
-	this.setCallback();
-};
-
-Project.prototype.setCallback = function() {
-	var that = this;
-	this.project.mouseover(function() {
-		that.project.addClass("blur", 200);
-		that.project.css("color", "rgba(0, 0, 0, 0)", 200);
-		that.overlay.fadeIn(200);
-	});
-	this.overlay.mouseleave(function() {
-		that.overlay.fadeOut(200);
-		that.project.removeClass("blur", 200);
-		that.project.css("color", "white", 200);
-	});
-};
-
-Projects = function() {
-	Projects.allProjects = $(".project").toArray();
-	Projects.projectList = new Array();
-
-	// Populating projects list
-	Projects.allProjects.forEach(function(elem, index, array) {
-		Projects.projectList.push(new Project(elem));
+Cards = function() {
+	$(".fork").mouseenter(function() {
+		$(this).css("border", "none");
+		$(this).css("background", "rgb(61, 61, 102)");
+		$(this).css("color", "white");
+		$(this).children(".fork-icon").attr("src", "img/icons/github-small-white.png");
 	});
 
-	$(".no-underline").mouseenter(function() {
-		$(".view-on-github").css("color", "#43436c");
-		$(".view-on-github").css("background", "white");
-	});
-	$(".no-underline").mouseleave(function() {
-		$(".view-on-github").css("color", "white");
-		$(".view-on-github").css("background", "none");
+	$(".fork").mouseleave(function() {
+		$(this).css("border", "gray 1px solid");
+		$(this).css("background", "none");
+		$(this).css("color", "black");
+		$(this).children(".fork-icon").attr("src", "img/icons/github-small.png");
 	});
 };

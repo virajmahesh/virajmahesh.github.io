@@ -10,7 +10,7 @@ body {
 .menu {
 	/* Contains the entire menu */
 	position: fixed;
-	background: rgba(51, 51, 102, 1); /* Light blue background */
+	background: rgb(51, 51, 102); /* Light blue background */
 	white-space: nowrap; /* No text wrapping */
 	height: 100%;
 	z-index: 100;
@@ -141,7 +141,56 @@ body {
 	text-decoration: none;
 }
 
-.row {
+.card {
+	margin-top: 30px;
+	width: 700px;
+	height: 275px;
+	margin-left: auto;
+	margin-right: auto;
+	border: gray 1px solid;
+	border-radius: 5px;
+}
+
+.first-card {
+	margin-top: 70px;
+}
+
+.heading {
+	width: 100%;
+	text-align: center;
+	margin-top: 25px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.desc {
+	margin-top: 30px;
+	line-height: 30px;
+	text-align: justify;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.fork {
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	border: gray 1px solid;
+}
+
+.fork-icon {
+	vertical-align: middle;
+	height: 30px;
+	width: 30px;
+	margin-right: 10px;
+}
+
+/*.row {
 	width: 80%;
 	margin-top: 70px;
 	margin-left: auto;
@@ -210,4 +259,4 @@ body {
 
 a.no-underline {
 	text-decoration: none;
-}
+}*/
