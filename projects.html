@@ -1,0 +1,85 @@
+ <html>
+	<head>
+		<!-- Adding Open Sans font from google -->
+		<link href="http://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" type="text/css">
+		<!-- Adding css -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<!-- Adding jQuery and script.js -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+
+		<script src="js/scripts.js"></script>
+		<title>
+			Viraj Mahesh
+		</title>
+	</head>
+	<body>
+		<!-- Menu bar -->
+		<div class="menu" id="menu">
+			<div class="menu-container">
+					<div class="item-container" id="menu-toggle">
+						<div id="name" class="menu-item">
+							<img class="menu-image" src="img/glyphs/menu.png" />
+							<span class="menu-text top-link">Viraj Mahesh</span>
+						</div>
+					</div>
+				<a href="index.html" class="menu-link">
+					<div class="item-container">
+						<div id="home" class="menu-item">
+							<img class="menu-image" src="img/glyphs/house.png" />
+							<span class="menu-text">Home</span>
+						</div>
+					</div>
+				</a>
+				<a href="projects.html" class="menu-link">
+					<div class="item-container active">
+						<div id="projects" class="menu-item">
+							<img class="menu-image" src="img/glyphs/projects.png" />
+							<span class="menu-text">Projects</span>
+						</div>
+					</div>
+				</a>
+				<a href="docs/Resume.pdf" class="menu-link">
+					<div class="item-container">
+						<div id="resume" class="menu-item">
+							<img class="menu-image" src="img/glyphs/resume.png" />
+							<span class="menu-text">Resume</span>
+						</div>
+					</div>
+				</a>
+				<div class="item-container">
+					<div id="contact" class="menu-item">
+						<img class="menu-image" src="img/glyphs/contact.png" />
+						<span class="menu-text">Contact</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Actual page content goes here -->
+		<div class="content-container" id="content-container">
+			<div class="content-overlay" id="content-overlay"></div>
+				<div class="content">
+					<div id="heading">Personal Projects</div>
+					<div class="card first-card" id="project-1">
+						<div class="heading">Falling Balls</div>
+						<div class="desc">
+							2D Android game built using the Android SDK. Implemented Java classes to manipulate position vectors and handle game physics. Implemented collision detection and response. Used the AdMob SDK to display in-game advertisements. High scores are stored locally in an SQLite database.
+						</div>
+						<div class="fork">
+							<img src="img/icons/github-small.png" class="fork-icon" />View on GitHub
+						</div>
+					</div>
+					<div class="card" id="project-2">
+						<div class="heading">3D Pool</div>
+						<div class="desc">
+							Simulated a 3D pool table using OpenGL and C++. Added sound and 3D texturing to make the game more realistic. Implemented C++ classes to manipulate vectors that were used to represent position, velocity and acceleration. Implemented collision detection and impulse based response.
+						</div>
+						<div class="fork">
+							<img src="img/icons/github-small.png" class="fork-icon" />View on GitHub
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<!-- Adding Open Sans font from google -->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+		<link href="http://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" type="text/css">
 		<!-- Adding css -->
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<!-- Adding jQuery and script.js -->
@@ -14,39 +14,71 @@
 	<body>
 		<div class="menu" id="menu">
 			<div class="menu-container">
-				<div id="name" class="menu-item">
-					<a href="index.html" class="menu-link">
-						<img class="menu-image" src="img/glyphs/me.png" />
-						<span class="menu-text">Viraj Mahesh</span>
-					</a>
-				</div>
-				<div id="home" class="menu-item">
-					<a href="index.html" class="menu-link">
-						<img class="menu-image" src="img/glyphs/house.png" />
-						<span class="menu-text">Home</span>
-					</a>
-				</div>
-				<div id="projects" class="menu-item">
-					<img class="menu-image" src="img/glyphs/projects-alt.png" />
-					<span class="menu-text">Projects</home>
-				</div>
-				<div id="resume" class="menu-item">
-					<img class="menu-image" src="img/glyphs/resume.png" />
-					<span class="menu-text">Resume</span>
-				</div>
-				<div id="contact" class="menu-item">
-					<img class="menu-image" src="img/glyphs/contact.png" />
-					<span class="menu-text">Contact</span>
+					<div class="item-container" id="menu-toggle">
+						<div id="name" class="menu-item">
+							<img class="menu-image" src="img/glyphs/menu.png"></img>
+									<span class="menu-text top-link">Viraj Mahesh</span>
+						</div>
+					</div>
+				<a href="index.html" class="menu-link">
+					<div class="item-container active">
+						<div id="home" class="menu-item">
+								<img class="menu-image" src="img/glyphs/house.png"></img>
+								<span class="menu-text">Home</span>
+						</div>
+					</div>
+				</a>
+				<a href="projects.html" class="menu-link">
+					<div class="item-container">
+						<div id="projects" class="menu-item">
+							<img class="menu-image" src="img/glyphs/projects.png"></img>
+							<span class="menu-text">Projects</span>
+						</div>
+					</div>
+				</a>
+				<a href="docs/Resume.pdf" class="menu-link">
+					<div class="item-container">
+						<div id="resume" class="menu-item">
+							<img class="menu-image" src="img/glyphs/resume.png"></img>
+							<span class="menu-text">Resume</span>
+						</div>
+					</div>
+				</a>
+				<div class="item-container">
+					<div id="contact" class="menu-item">
+						<img class="menu-image" src="img/glyphs/contact.png"></img>
+						<span class="menu-text">Contact</span>
+					</div>
 				</div>
 			</div>
 		</div>
 		<!-- Actual page content goes here -->
 		<div class="content-container" id="content-container">
+			<div class="content-overlay" id="content-overlay"></div>
 			<div class="content">
 				<div id="heading">Viraj Mahesh</div>
 				<!-- Subheading -->
 				<div id="sub-heading"><img class="glyph" src="img/glyphs/glasses.png">Student &nbsp;-  <img class="glyph" src="img/glyphs/laptop.png"> Tech Enthusiast &nbsp; - <img class="glyph" src="img/glyphs/coffee.png"> Programmer </div>
-				<div class="bio">I am an undergraduate student at University of California Berkeley. I am pursuing a B.S in Electrical Engineering and Computer Science. I am interested in both Software Engineering as well as Modelling and Algorithms. I conduct undergraduate research under Professor Ken Goldberg at the Berkeley Laboratory for Automation Science and Engineering. I develop JavaScript extensions for Snap, which is a graphical programming language created by Berkeley and used to teach CS10.</div>
+				<div class="bio">I am an undergraduate student at University of California Berkeley. I am pursuing a B.S in Electrical Engineering and Computer Science. I am interested in both Software Engineering as well as Modelling and Algorithms. I conduct undergraduate research under Professor Ken Goldberg at the Berkeley Laboratory for Automation Science and Engineering. I develop JavaScript extensions for Snap, which is a graphical programming language created by Berkeley and used to teach CS10. I am also a lab assistant for CS61A.</div>
+			</div>
+			<div class="footer">
+				<div class="social-bar">
+					<a href="https://www.facebook.com/viraj.mahesh" class="social-link">
+						<img src="img/icons/facebook.png" class="social-icon">
+					</a>
+					<a href="https://www.linkedin.com/in/virajmahesh" class="social-link">
+						<img src="img/icons/linkedin.png" class="social-icon" />
+					</a>
+					<a href="skype:virajmahesh" class="social-link">
+						<img src="img/icons/skype.png" class="social-icon" />
+					</a>
+					<a href="https://plus.google.com/u/0/+VirajMahesh/posts" class="social-link">
+						<img src="img/icons/google-plus.png" class="social-icon" />
+					</a>
+					<a href="https://github.com/virajmahesh">
+						<img src="img/icons/github.png" class="social-icon" />
+					</a>
+				</div>
 			</div>
 		</div>
 	</body>
