@@ -199,7 +199,7 @@ Footer.animateIcons = function() {
 
 Cards = function() {
 	$(".fork").mouseenter(function() {
-		$(this).css("border", "none");
+		$(this).css("border", "rgb(61, 61, 102) solid 1px");
 		$(this).css("background", "rgb(61, 61, 102)");
 		$(this).css("color", "white");
 		$(this).children(".fork-icon").attr("src", "img/icons/github-small-white.png");
