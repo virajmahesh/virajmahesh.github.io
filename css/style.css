@@ -1,8 +1,8 @@
 body {
 	position: relative;
 	margin: 0px; /* No spacing between the body and the edge of the browser window */
-	font-family: 'Open Sans', sans-serif thin;
-	font-weight: thin;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
 	background: white;
 }
 
@@ -87,7 +87,6 @@ body {
 #heading {
 	text-align: center;
 	font-size: 35px;
-	font-weight: bold;
 }
 
 #sub-heading {
@@ -141,35 +140,6 @@ body {
 	text-decoration: none;
 }
 
-.card {
-	margin-top: 50px;
-	width: 700px;
-	margin-left: auto;
-	margin-right: auto;
-	border: gray 1px solid;
-	border-radius: 5px;
-}
-
-.first-card {
-	margin-top: 30px;
-}
-
-.heading {
-	width: 100%;
-	text-align: center;
-	margin-top: 25px;
-	font-size: 20px;
-	font-weight: bold;
-}
-
-.desc {
-	margin-top: 30px;
-	line-height: 30px;
-	text-align: justify;
-	padding-left: 40px;
-	padding-right: 40px;
-}
-
 .fork {
 	width: 200px;
 	height: 40px;
@@ -190,6 +160,25 @@ body {
 	margin-right: 10px;
 }
 
-.top-spacing {
-	margin-top: 50px;
+.projects {
+	margin-top: 80px;
+	padding-left: 30px;
+	padding-right: 30px;
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.desc {
+	line-height: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top: 25px;
+	text-align: justify;
+	font-size: 15px;
+}
+
+.project-title {
+	margin-top: 30px;
+	font-weight: bold;
 }
