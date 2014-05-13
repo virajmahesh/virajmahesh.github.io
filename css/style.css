@@ -182,3 +182,11 @@ body {
 	margin-top: 30px;
 	font-weight: bold;
 }
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: black;
+}
