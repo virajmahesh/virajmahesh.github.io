@@ -277,7 +277,6 @@ input:focus {
 	font-weight: bold;
 }
 
-<<<<<<< HEAD
 .contact {
 	margin-top: 50px;
 }
@@ -285,12 +284,12 @@ input:focus {
 .field {
 	margin-left: 40px;
 }
-=======
+
 a {
 	text-decoration: none;
+	color: black;
 }
 
 a:visited {
 	color: black;
 }
->>>>>>> FETCH_HEAD
