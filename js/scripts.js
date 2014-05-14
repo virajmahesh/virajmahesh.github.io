@@ -3,8 +3,8 @@ $(document).ready(function() {
 	var menu = new Menu(); // Creating a new menu
 	var content = new Content(); // Create a new content
 	var footer = new Footer(); // Create a new footer
-	var cards = new Cards(); // Create a new list of projects
-	$(".modal").hide();
+	var projects = new Projects(); // Create a new list of projects
+	var modal = new Modal(); // Create a new Modal
 });
 
 Menu = function() {
@@ -60,7 +60,7 @@ Menu.setCallback = function() {
 
 	$("#contact-me").click(function() {
 		Content.dim();
-		$(".modal").show();
+		Modal.fadeIn();
 	});
 };
 
@@ -203,7 +203,7 @@ Footer.animateIcons = function() {
 	});
 };
 
-Cards = function() {
+Projects = function() {
 	$(".fork").mouseenter(function() {
 		$(this).css("border", "rgb(61, 61, 102) solid 1px");
 		$(this).css("background", "rgb(61, 61, 102)");
@@ -218,3 +218,47 @@ Cards = function() {
 		$(this).children(".fork-icon").attr("src", "img/icons/github-small.png");
 	});
 };
+
+Modal = function() {
+	Modal.modal = $(".modal");
+	Modal.hide();
+
+	$(".button").mouseenter(function() {
+		$(this).css("border", "rgb(51, 51, 102)");
+		$(this).css("background", "rgb(51, 51, 102)");
+		$(this).css("color", "white");
+	});
+
+	$(".button").mouseleave(function() {
+		$(this).css("border", "rgba(0, 0, 0, 0.2) solid 1px");
+		$(this).css("background", "white");
+		$(this).css("color", "black");
+	});
+
+	$(".exit-button").mouseenter(function() {
+		$(this).css("color", "rgb(51, 51, 102)");
+		$(this).css("font-weight", "bold");
+	});
+
+	$(".exit-button").mouseleave(function() {
+		$(this).css("color", "gray");
+		$(this).css("font-weight", "100");
+	})
+
+	$(".exit-button").click(function() {
+		Modal.fadeOut();
+		Content.light();
+	});
+}
+
+Modal.fadeOut = function() {
+	Modal.modal.fadeOut();
+}
+
+Modal.fadeIn = function() {
+	Modal.modal.fadeIn();
+}
+
+Modal.hide = function() {
+	Modal.modal.hide();
+}
