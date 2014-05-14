@@ -6,7 +6,101 @@ body {
 	background: white;
 }
 
+.modal-vert {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 50;
+	pointer-events: none;
+}
 
+.modal-horiz {
+	position: fixed;
+	width: 100%;
+	height: 550px;
+	margin-top: auto;
+	margin-bottom: auto;
+	top: 0; bottom: 0; left: 0; right: 0;
+	z-index:75;
+}
+
+.modal {
+	margin-left: auto;
+	margin-right: auto;
+	height: 550px;
+	width: 600px;
+	z-index: 100;
+	border-radius: 10px;
+	padding: 20px;
+	font-size: 20px;
+	background: white;
+	pointer-events: all;
+}
+
+.text-box {
+	width: 300px;
+	height: 45px;
+	font-size: 16px;
+	border-radius: 7px;
+	border: rgba(0, 0, 0, 0.2) solid 1px;
+	outline:none;
+	padding-left: 20px;
+	font-family: 'Raleway', sans-serif;
+	vertical-align: middle;
+}
+
+input:focus {
+	border: solid 2px rgb(51, 51, 102);
+}
+
+.modal-title {
+	text-align: center;
+	margin-top: 15px;
+}
+
+.message {
+	border-radius: 7px;
+	width: 300px;
+	font-size: 16px;
+	border-radius: 7px;
+	border: rgba(0, 0, 0, 0.2) solid 1px;
+	outline:none;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	height: 150px;
+	font-family: 'Raleway', sans-serif;
+	vertical-align: top;
+	resize: none;
+	wrap: hard;
+}
+
+.button {
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+	text-align: center;
+	border-radius: 7px;
+	border: gray solid 1px;
+	margin-top: 30px;
+	padding: 10px;
+}
+
+.form {
+	margin-top: 80px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.row {
+	margin-top: 50px;
+}
+
+.field-name {
+	display: inline-block;
+	width: 200px;
+	padding-left: 30px;
+}
 .menu {
 	/* Contains the entire menu */
 	position: fixed;
@@ -173,12 +267,20 @@ body {
 	line-height: 30px;
 	padding-left: 20px;
 	padding-right: 20px;
-	margin-top: 25px;
+	margin-top: 15px;
 	text-align: justify;
 	font-size: 15px;
 }
 
 .project-title {
-	margin-top: 30px;
+	margin-top: 10px;
 	font-weight: bold;
+}
+
+.contact {
+	margin-top: 50px;
+}
+
+.field {
+	margin-left: 40px;
 }

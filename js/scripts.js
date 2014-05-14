@@ -4,6 +4,7 @@ $(document).ready(function() {
 	var content = new Content(); // Create a new content
 	var footer = new Footer(); // Create a new footer
 	var cards = new Cards(); // Create a new list of projects
+	$(".modal").hide();
 });
 
 Menu = function() {
@@ -55,6 +56,11 @@ Menu.setCallback = function() {
 			Content.light();
 			MenuItem.invertActive(Menu.items);
 		}
+	});
+
+	$("#contact-me").click(function() {
+		Content.dim();
+		$(".modal").show();
 	});
 };
 

@@ -13,6 +13,31 @@
 		</title>
 	</head>
 	<body>
+
+		<!-- Contact Form -->
+		<div class="modal-vert">
+			<div class="modal-horiz">
+				<div class="modal">
+					<div class="modal-title">Contact Me</div>
+					<div class="form">
+						<div class="row">
+							<div class="field-name">Name</div>
+							<input type="text" class="text-box"/>
+						</div>
+						<div class="row">
+							<div class="field-name">Email</div>
+							<input type="text" class="text-box"/>
+						</div>
+						<div class="row">
+							<div class="field-name">Message</div>
+							<textarea class="message" ></textarea>
+						</div>
+					</div>
+					<div class="button">Submit</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- Menu bar -->
 		<div class="menu" id="menu">
 			<div class="menu-container">
@@ -46,12 +71,14 @@
 						</div>
 					</div>
 				</a>
-				<div class="item-container">
-					<div id="contact" class="menu-item">
-						<img class="menu-image" src="img/glyphs/contact.png" />
-						<span class="menu-text">Contact</span>
+				<a class="menu-link" href="#" id="contact-me">
+					<div class="item-container">
+						<div id="contact" class="menu-item">
+							<img class="menu-image" src="img/glyphs/contact.png" />
+							<span class="menu-text">Contact</span>
+						</div>
 					</div>
-				</div>
+				</a>
 			</div>
 		</div>
 		<!-- Actual page content goes here -->
@@ -64,7 +91,7 @@
 							Falling Balls
 						</div>
 						<div class="desc">
-							2D Android game built using the Android SDK. Implemented Java classes to manipulate position vectors and handle game physics. Implemented collision detection and response. Used the AdMob SDK to display in-game advertisements. High scores are stored locally in an SQLite database.
+							2D Android game built using the Android SDK. Implemented Java libraries to handle game physics, collision detection and response. Used the AdMob SDK to display in-game advertisements. Used an SQLite Database to store highscores locally.
 						</div>
 						<div class="fork"><img class="fork-icon" src="img/icons/github-small.png" />View on GitHub</div>
 						
@@ -86,7 +113,7 @@
 
 						<div class="project-title">Network</div>
 						<div class="desc">
-							Implemented an AI in Java that plays the Network board game with a win rate of 95% against a random player. The AI uses mini-max with alpha-beta prunning to search the game tree for optimal moves. Implemented a variety of data structures in order to represent the game board. Implemented depth-first-search to search for a network.
+							Implemented an AI in Java that plays the Network board game with a win rate of 95% against a random player. The AI uses mini-max with alpha-beta prunning to search the game tree for optimal moves. Implemented a variety of data structures in order to represent the game board. Implemented depth-first-search to search for a network. The rules of the Network game are described in the project readme file.
 						</div>
 						<div class="fork">
 							<img src="img/icons/github-small.png" class="fork-icon" />View on GitHub
