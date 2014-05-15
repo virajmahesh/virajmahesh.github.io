@@ -59,7 +59,6 @@ Menu.setCallback = function() {
 	});
 
 	$("#contact-me").click(function() {
-		Content.dim();
 		Modal.fadeIn();
 	});
 };
@@ -247,15 +246,26 @@ Modal = function() {
 
 	$(".exit-button").click(function() {
 		Modal.fadeOut();
-		Content.light();
+	});
+
+	$(".button").click(function() {
+		$.get("http://virajmahesh.herokuapp.com/",
+		{
+			name: $("#name-field").val(),
+			email: $("#email-field").val(),
+			message: $("#message-field").val()
+		});
+		Modal.fadeOut();
 	});
 }
 
 Modal.fadeOut = function() {
 	Modal.modal.fadeOut();
+	Content.light();
 }
 
 Modal.fadeIn = function() {
+	Content.dim();
 	Modal.modal.fadeIn();
 }
 
