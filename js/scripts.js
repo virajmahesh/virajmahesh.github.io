@@ -249,7 +249,7 @@ Modal = function() {
 	});
 
 	$(".button").click(function() {
-		$.get("http://virajmahesh.herokuapp.com/",
+		$.get("http://virajmahesh.herokuapp.com/?",
 		{
 			name: $("#name-field").val(),
 			email: $("#email-field").val(),
