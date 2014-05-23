@@ -27,10 +27,10 @@ body {
 .modal {
 	margin-left: auto;
 	margin-right: auto;
-	height: 550px;
+	height: 560px;
 	width: 600px;
 	z-index: 100;
-	border-radius: 10px;
+	border-radius: 5px;
 	padding: 20px;
 	font-size: 20px;
 	background: white;
@@ -86,9 +86,13 @@ input:focus {
 	width: 200px;
 	text-align: center;
 	border-radius: 7px;
-	border: rgba(0, 0, 0, 0.2) solid 1px;
+	border: solid 4px white;
 	margin-top: 40px;
 	padding: 10px;
+	display: inline-block;
+	margin-right: 20px;
+	margin-left: 20px;
+	color: white;
 }
 
 .form {
@@ -306,4 +310,17 @@ a:visited {
 .exit-button {
 	display: inline-block;
 	color: gray;
+}
+
+.button-row {
+	text-align: center;
+	margin-top: 10px;
+}
+
+#submit {
+	background: #2B9B50;
+}
+
+#cancel {
+	background: #FF3030;
 }

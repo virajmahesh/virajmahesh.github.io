@@ -194,11 +194,9 @@ Footer.animateIcons = function() {
 	Footer.icons.mouseenter(function() {
 		// Grow the image but shorten margins
 		$(this).css("opacity", 1.0);
-		//$(this).animate({width: 55, height: 55, marginTop: "-=2.5", marginBottom: "-=2.5", marginLeft: "-=2.5", marginRight: "-=2.5"}, 200);
 	});
 	Footer.icons.mouseleave(function() {
 		$(this).css("opacity", 0.75);
-		//$(this).animate({width: 50, height: 50, marginTop: "+=2.5", marginBottom: "+=2.5", marginLeft: "+=2.5", marginRight: "+=2.5"}, 200);
 	});
 };
 
@@ -222,16 +220,28 @@ Modal = function() {
 	Modal.modal = $(".modal");
 	Modal.hide();
 
-	$(".button").mouseenter(function() {
-		$(this).css("border", "rgb(51, 51, 102)");
-		$(this).css("background", "rgb(51, 51, 102)");
-		$(this).css("color", "white");
+	$("#submit").mouseenter(function() {
+		$(this).css("border", "solid 4px rgb(51, 51, 102)");
+		$(this).css("background", "#47B56C");
+		$(this).css("cursor", "pointer");
 	});
 
-	$(".button").mouseleave(function() {
-		$(this).css("border", "rgba(0, 0, 0, 0.2) solid 1px");
-		$(this).css("background", "white");
-		$(this).css("color", "black");
+	$("#submit").mouseleave(function() {
+		$(this).css("border", "solid 4px white");
+		$(this).css("background", "#2B9B50");
+		$(this).css("cursor", "default");
+	});
+
+	$("#cancel").mouseenter(function() {
+		$(this).css("border", "solid 4px rgb(51, 51, 102)");
+		$(this).css("background", "#FF4D4D");
+		$(this).css("cursor", "pointer");
+	});
+
+	$("#cancel").mouseleave(function() {
+		$(this).css("border", "solid 4px white");
+		$(this).css("background", "#FF3030");
+		$(this).css("cursor", "default");
 	});
 
 	$(".exit-button").mouseenter(function() {
@@ -248,13 +258,17 @@ Modal = function() {
 		Modal.fadeOut();
 	});
 
-	$(".button").click(function() {
+	$("#submit").click(function() {
 		$.get("http://virajmahesh.herokuapp.com/?",
 		{
 			name: $("#name-field").val(),
 			email: $("#email-field").val(),
 			message: $("#message-field").val()
 		});
+		Modal.fadeOut();
+	});
+
+	$("#cancel").click(function() {
 		Modal.fadeOut();
 	});
 }
