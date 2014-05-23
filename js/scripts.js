@@ -268,6 +268,15 @@ Modal = function() {
 		Modal.fadeOut();
 	});
 
+	$(".text-box, .message").focusout(function() {
+		if($(this).val() == "") {
+			$(this).css("background", "rgba(256, 0, 0, 0.25)");
+		}
+		else {
+			$(this).css("background", "rgba(0, 256, 0, 0.25)");
+		}
+	});
+
 	$("#cancel").click(function() {
 		Modal.fadeOut();
 	});
