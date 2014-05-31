@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<!-- Adding Open Sans font from google -->
-		<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:300,700' rel='stylesheet' type='text/css'>
 		<!-- Adding css -->
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<!-- Adding jQuery and script.js -->
@@ -12,26 +12,55 @@
 		</title>
 	</head>
 	<body>
+
+		<!-- Contact Form -->
+		<div class="modal-vert">
+			<div class="modal-horiz">
+				<div class="modal">
+					<div class="exit"><a href="#"><div class="exit-button">X</div></a></div>
+					<div class="modal-title">Contact Me</div>
+					<div class="form">
+						<div class="row">
+							<div class="field-name">Name</div>
+							<input type="text" class="text-box" id="name-field"/>
+						</div>
+						<div class="row">
+							<div class="field-name">Email</div>
+							<input type="text" class="text-box" id="email-field"/>
+						</div>
+						<div class="row">
+							<div class="field-name">Message</div>
+							<textarea class="message" id="message-field"></textarea>
+						</div>
+					</div>
+					<div class="button-row">
+						<div class="button" id="submit">Submit</div><div class="button" id="cancel">Cancel</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Menu bar -->
 		<div class="menu" id="menu">
 			<div class="menu-container">
 					<div class="item-container" id="menu-toggle">
 						<div id="name" class="menu-item">
-							<img class="menu-image" src="img/glyphs/menu.png"></img>
-									<span class="menu-text top-link">Viraj Mahesh</span>
+							<img class="menu-image" src="img/glyphs/menu.png" />
+							<span class="menu-text top-link">Viraj Mahesh</span>
 						</div>
 					</div>
 				<a href="index.html" class="menu-link">
 					<div class="item-container active">
 						<div id="home" class="menu-item">
-								<img class="menu-image" src="img/glyphs/house.png"></img>
-								<span class="menu-text">Home</span>
+							<img class="menu-image" src="img/glyphs/house.png" />
+							<span class="menu-text">Home</span>
 						</div>
 					</div>
 				</a>
 				<a href="projects.html" class="menu-link">
 					<div class="item-container">
 						<div id="projects" class="menu-item">
-							<img class="menu-image" src="img/glyphs/projects.png"></img>
+							<img class="menu-image" src="img/glyphs/projects.png" />
 							<span class="menu-text">Projects</span>
 						</div>
 					</div>
@@ -39,19 +68,22 @@
 				<a href="docs/Resume.pdf" class="menu-link">
 					<div class="item-container">
 						<div id="resume" class="menu-item">
-							<img class="menu-image" src="img/glyphs/resume.png"></img>
+							<img class="menu-image" src="img/glyphs/resume.png" />
 							<span class="menu-text">Resume</span>
 						</div>
 					</div>
 				</a>
-				<div class="item-container">
-					<div id="contact" class="menu-item">
-						<img class="menu-image" src="img/glyphs/contact.png"></img>
-						<span class="menu-text">Contact</span>
+				<a class="menu-link" href="#" id="contact-me">
+					<div class="item-container">
+						<div id="contact" class="menu-item">
+							<img class="menu-image" src="img/glyphs/contact.png" />
+							<span class="menu-text">Contact</span>
+						</div>
 					</div>
-				</div>
+				</a>
 			</div>
 		</div>
+
 		<!-- Actual page content goes here -->
 		<div class="content-container" id="content-container">
 			<div class="content-overlay" id="content-overlay"></div>

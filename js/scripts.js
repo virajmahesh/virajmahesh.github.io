@@ -3,7 +3,8 @@ $(document).ready(function() {
 	var menu = new Menu(); // Creating a new menu
 	var content = new Content(); // Create a new content
 	var footer = new Footer(); // Create a new footer
-	var cards = new Cards(); // Create a new list of projects
+	var projects = new Projects(); // Create a new list of projects
+	var modal = new Modal(); // Create a new Modal
 });
 
 Menu = function() {
@@ -55,6 +56,10 @@ Menu.setCallback = function() {
 			Content.light();
 			MenuItem.invertActive(Menu.items);
 		}
+	});
+
+	$("#contact-me").click(function() {
+		Modal.fadeIn();
 	});
 };
 
@@ -189,15 +194,13 @@ Footer.animateIcons = function() {
 	Footer.icons.mouseenter(function() {
 		// Grow the image but shorten margins
 		$(this).css("opacity", 1.0);
-		//$(this).animate({width: 55, height: 55, marginTop: "-=2.5", marginBottom: "-=2.5", marginLeft: "-=2.5", marginRight: "-=2.5"}, 200);
 	});
 	Footer.icons.mouseleave(function() {
 		$(this).css("opacity", 0.75);
-		//$(this).animate({width: 50, height: 50, marginTop: "+=2.5", marginBottom: "+=2.5", marginLeft: "+=2.5", marginRight: "+=2.5"}, 200);
 	});
 };
 
-Cards = function() {
+Projects = function() {
 	$(".fork").mouseenter(function() {
 		$(this).css("border", "rgb(61, 61, 102) solid 1px");
 		$(this).css("background", "rgb(61, 61, 102)");
@@ -212,3 +215,83 @@ Cards = function() {
 		$(this).children(".fork-icon").attr("src", "img/icons/github-small.png");
 	});
 };
+
+Modal = function() {
+	Modal.modal = $(".modal");
+	Modal.hide();
+
+	$("#submit").mouseenter(function() {
+		$(this).css("border", "solid 4px rgb(51, 51, 102)");
+		$(this).css("background", "#47B56C");
+		$(this).css("cursor", "pointer");
+	});
+
+	$("#submit").mouseleave(function() {
+		$(this).css("border", "solid 4px white");
+		$(this).css("background", "#2B9B50");
+		$(this).css("cursor", "default");
+	});
+
+	$("#cancel").mouseenter(function() {
+		$(this).css("border", "solid 4px rgb(51, 51, 102)");
+		$(this).css("background", "#FF4D4D");
+		$(this).css("cursor", "pointer");
+	});
+
+	$("#cancel").mouseleave(function() {
+		$(this).css("border", "solid 4px white");
+		$(this).css("background", "#FF3030");
+		$(this).css("cursor", "default");
+	});
+
+	$(".exit-button").mouseenter(function() {
+		$(this).css("color", "rgb(51, 51, 102)");
+		$(this).css("font-weight", "bold");
+	});
+
+	$(".exit-button").mouseleave(function() {
+		$(this).css("color", "gray");
+		$(this).css("font-weight", "100");
+	})
+
+	$(".exit-button").click(function() {
+		Modal.fadeOut();
+	});
+
+	$("#submit").click(function() {
+		$.get("http://virajmahesh.herokuapp.com/?",
+		{
+			name: $("#name-field").val(),
+			email: $("#email-field").val(),
+			message: $("#message-field").val()
+		});
+		Modal.fadeOut();
+	});
+
+	$(".text-box, .message").focusout(function() {
+		if($(this).val() == "") {
+			$(this).css("background", "rgba(256, 0, 0, 0.25)");
+		}
+		else {
+			$(this).css("background", "rgba(0, 256, 0, 0.25)");
+		}
+	});
+
+	$("#cancel").click(function() {
+		Modal.fadeOut();
+	});
+}
+
+Modal.fadeOut = function() {
+	Modal.modal.fadeOut();
+	Content.light();
+}
+
+Modal.fadeIn = function() {
+	Content.dim();
+	Modal.modal.fadeIn();
+}
+
+Modal.hide = function() {
+	Modal.modal.hide();
+}

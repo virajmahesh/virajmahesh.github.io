@@ -13,6 +13,34 @@
 		</title>
 	</head>
 	<body>
+
+		<!-- Contact Form -->
+		<div class="modal-vert">
+			<div class="modal-horiz">
+				<div class="modal">
+					<div class="exit"><a href="#"><div class="exit-button">X</div></a></div>
+					<div class="modal-title">Contact Me</div>
+					<div class="form">
+						<div class="row">
+							<div class="field-name">Name</div>
+							<input type="text" class="text-box" id="name-field"/>
+						</div>
+						<div class="row">
+							<div class="field-name">Email</div>
+							<input type="text" class="text-box" id="email-field"/>
+						</div>
+						<div class="row">
+							<div class="field-name">Message</div>
+							<textarea class="message" id="message-field"></textarea>
+						</div>
+					</div>
+					<div class="button-row">
+						<div class="button" id="submit">Submit</div><div class="button" id="cancel">Cancel</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- Menu bar -->
 		<div class="menu" id="menu">
 			<div class="menu-container">
@@ -46,14 +74,17 @@
 						</div>
 					</div>
 				</a>
-				<div class="item-container">
-					<div id="contact" class="menu-item">
-						<img class="menu-image" src="img/glyphs/contact.png" />
-						<span class="menu-text">Contact</span>
+				<a class="menu-link" href="#" id="contact-me">
+					<div class="item-container">
+						<div id="contact" class="menu-item">
+							<img class="menu-image" src="img/glyphs/contact.png" />
+							<span class="menu-text">Contact</span>
+						</div>
 					</div>
-				</div>
+				</a>
 			</div>
 		</div>
+
 		<!-- Actual page content goes here -->
 		<div class="content-container" id="content-container">
 			<div class="content-overlay" id="content-overlay"></div>
@@ -64,9 +95,9 @@
 							Falling Balls
 						</div>
 						<div class="desc">
-							2D Android game built using the Android SDK. Implemented Java classes to manipulate position vectors and handle game physics. Implemented collision detection and response. Used the AdMob SDK to display in-game advertisements. High scores are stored locally in an SQLite database.
+							2D Android game built using the Android SDK. Implemented Java libraries to handle game physics, collision detection and response. Used the AdMob SDK to display in-game advertisements. Used an SQLite Database to store highscores locally.
 						</div>
-						<div class="fork"><img class="fork-icon" src="img/icons/github-small.png" />View on GitHub</div>
+						<a href="https://github.com/virajmahesh/Falling-Balls-Android"><div class="fork"><img class="fork-icon" src="img/icons/github-small.png" />View on GitHub</div></a>
 						
 						<div class="project-title">
 							3D Pool
@@ -74,7 +105,7 @@
 						<div class="desc">
 							Simulated a 3D pool table using OpenGL and C++. Added sound and 3D texturing to make the game more realistic. Implemented C++ libraries to handle rigid body simulation, collision detection and impulse based collision response. Used the glut wrapper for OpenGL to render 3D objects with lighting effects to improve realism.
 						</div>
-						<div class="fork"><img class="fork-icon" src="img/icons/github-small.png" />View on GitHub</div>
+						<a href="https://github.com/virajmahesh/Pool"><div class="fork"><img class="fork-icon" src="img/icons/github-small.png" />View on GitHub</div></a>
 						
 						<div class="project-title">
 							2D Basketball
@@ -82,15 +113,23 @@
 						<div class="desc">
 							Created a 2D basketball simulation using OpenGL and C++. Added sound and texturing to make the game more realistic. Implemented C++ libraries to handle physics simulation, collision detection and event handling. Created an online database using PHP and mySQL that handled player login, registration and high score submission.
 						</div>
-						<div class="fork"><img class="fork-icon" src="img/icons/github-small.png" />View on GitHub</div>
+						<a href="https://github.com/virajmahesh/Basketball"><div class="fork"><img class="fork-icon" src="img/icons/github-small.png" />View on GitHub</div></a>
 
 						<div class="project-title">Network</div>
 						<div class="desc">
-							Implemented an AI in Java that plays the Network board game with a win rate of 95% against a random player. The AI uses mini-max with alpha-beta prunning to search the game tree for optimal moves. Implemented a variety of data structures in order to represent the game board. Implemented depth-first-search to search for a network.
+							Implemented an AI in Java that plays the Network board game with a win rate of 95% against a random player. The AI uses mini-max with alpha-beta prunning to search the game tree for optimal moves. Implemented a variety of data structures in order to represent the game board. Implemented depth-first-search to search for a network. The rules of the Network game are described in the project readme file.
 						</div>
-						<div class="fork">
+						<a href="https://github.com/virajmahesh/Network"><div class="fork">
 							<img src="img/icons/github-small.png" class="fork-icon" />View on GitHub
+						</div></a>
+
+						<div class="project-title">Minesweeper</div>
+						<div class="desc">
+							Created an improved version of Minesweeper using C++ and OpenGL. Used 2D textures to make the game more realistic. Created an interface that allows the user to choose board size and mine density in order to make gameplay more interesting.
 						</div>
+						<a href="https://github.com/virajmahesh/Network"><div class="fork">
+							<img src="img/icons/github-small.png" class="fork-icon" />View on GitHub
+						</div></a>
 
 					</div>
 				</div>
