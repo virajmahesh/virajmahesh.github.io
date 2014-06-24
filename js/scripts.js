@@ -22,6 +22,7 @@ Menu = function() {
 	Menu.setCallback();
 
 	MenuItem.hide(Menu.items);
+	Tooltip.hideAll();
 };
 
 Menu.collapse = function() {
@@ -49,6 +50,7 @@ Menu.setCallback = function() {
 			Menu.hidden = false;
 			Content.dim();
 			MenuItem.revertActive(Menu.items);
+			Tooltip.hideAll();
 		}
 		else if (!Menu.hidden) {
 			Menu.collapse();
@@ -91,6 +93,7 @@ MenuItem = function(object) {
 	this.allChildren = this.object.children().children();
 	this.image = this.object.children().children(".menu-image");
 	this.text = this.object.children().children(".menu-text");
+	this.tooltip = new Tooltip(this.object.children().children(".tooltip"));
 
 	this.setCallback();
 
@@ -117,10 +120,14 @@ MenuItem.prototype.setCallback = function() {
 	this.object.mouseenter(function() {
 		that.revert();
 		that.darkenBackground();
+		if (Menu.hidden) {
+			that.tooltip.show();
+		}
 	});
 
 	this.object.mouseleave(function() {
 		that.lightenBackground();
+		that.tooltip.hide();
 		if (Menu.hidden && that.active) {
 			that.invert();
 		}
@@ -294,4 +301,20 @@ Modal.fadeIn = function() {
 
 Modal.hide = function() {
 	Modal.modal.hide();
+}
+
+Tooltip = function(object) {
+	this.object = object;
+}
+
+Tooltip.prototype.show = function() {
+	$(this.object).show();
+}
+
+Tooltip.prototype.hide = function() {
+	$(this.object).hide();
+}
+
+Tooltip.hideAll = function() {
+	$(".tooltip").hide();
 }
