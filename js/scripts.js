@@ -5,6 +5,14 @@ $(document).ready(function() {
 	var footer = new Footer(); // Create a new footer
 	var projects = new Projects(); // Create a new list of projects
 	var modal = new Modal(); // Create a new Modal
+
+	var icons = $(".fork-icon");
+
+	for (var i = 0; i < icons.length; i++) {
+		var image = new Image();
+		console.log(icons[i].src)
+		image.src = icons[i].src
+	}
 });
 
 Menu = function() {
