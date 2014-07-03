@@ -10,8 +10,8 @@ $(document).ready(function() {
 
 	for (var i = 0; i < icons.length; i++) {
 		var image = new Image();
-		console.log(icons[i].src)
-		image.src = icons[i].src
+		image.src = "img/icons/github-small-white.png"
+		console.log(image.src)
 	}
 });
 
