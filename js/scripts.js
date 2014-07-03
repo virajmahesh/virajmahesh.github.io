@@ -5,14 +5,6 @@ $(document).ready(function() {
 	var footer = new Footer(); // Create a new footer
 	var projects = new Projects(); // Create a new list of projects
 	var modal = new Modal(); // Create a new Modal
-
-	var icons = $(".fork-icon");
-
-	for (var i = 0; i < icons.length; i++) {
-		var image = new Image();
-		image.src = "img/icons/github-small-white.png"
-		console.log(image.src)
-	}
 });
 
 Menu = function() {
@@ -216,6 +208,10 @@ Footer.animateIcons = function() {
 };
 
 Projects = function() {
+	// Preload the white github image
+	var image = new Image();
+	image.src = "img/icons/github-small-white.png"
+
 	$(".fork").mouseenter(function() {
 		$(this).css("border", "rgb(61, 61, 102) solid 1px");
 		$(this).css("background", "rgb(61, 61, 102)");
