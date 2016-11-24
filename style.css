@@ -1,0 +1,22 @@
+body {
+    background: url(assets/background.png);
+
+    /* Scale the background image so that it doesn't repeat */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*
+ A translucent overlay over the background.
+ */
+#background-overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+}
