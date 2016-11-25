@@ -93,9 +93,17 @@ a {
     text-decoration: none;
 }
 
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
 #resume {
     height: 31px;
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 10px;
+    display: inline-block;
+    vertical-align: middle;
 }
