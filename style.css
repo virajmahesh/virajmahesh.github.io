@@ -40,6 +40,8 @@ body {
     position: absolute;
     display: inline-block;
     text-align: center;
+
+    vertical-align: middle;
 }
 
 #profile-information {
@@ -48,10 +50,16 @@ body {
     display: inline-block;
     font-family: 'Hind', sans-serif;
 
-    margin-left: 40px;
+    margin-left: 70px;
+    vertical-align: middle;
 }
 
-#profile-image, img {
+#profile-image-container {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#profile-image {
     display: inline-block;
 }
 
@@ -84,4 +92,5 @@ p {
     height: 25px;
     font-size: 24px;
     font-weight: 300;
+    margin-bottom: 10px;
 }
