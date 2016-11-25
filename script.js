@@ -73,6 +73,59 @@ function setProfileImageContainerWidth(profileImageContainer) {
 }
 
 /**
+ * Set the profile image width based on the type of device.
+ */
+function setProfileImageWidth(profileImage) {
+    if (isMobile()) {
+        profileImage.css('width', '35%');
+        profileImage.css('height', 'auto');
+    }
+    else {
+        profileImage.css('width', '231px');
+        profileImage.css('height', 'auto');
+    }
+}
+
+/**
+ * Set the font size and image size of profile elements based on the
+ * type of device and screen size.
+ */
+function setProfileFontSize(name, school, work, resume, icon) {
+    if (isMobile()) {
+        name.css('font-size', '10vw');
+        name.css('height', '10vw');
+
+        school.css('font-size','7.77vw');
+        school.css('height','7.77vw');
+
+        work.css('font-size', '3.75vw');
+        work.css('height', '3.75vw');
+
+        resume.css('font-size', '4.5vw');
+        resume.css('height', '4.5vw');
+
+        icon.css('width', '4.5vw');
+        icon.css('height', 'auto');
+    }
+    else {
+        name.css('font-size', '45px');
+        name.css('height', '45px');
+
+        school.css('font-size','35px');
+        school.css('height','35px');
+
+        work.css('font-size', '24px');
+        work.css('height', '24px');
+
+        resume.css('font-size', '30px');
+        resume.css('height', '30px');
+
+        icon.css('width', '30px');
+        icon.css('height', 'auto');
+    }
+}
+
+/**
  * Initialize the size of responsive elements on the page.
  * This function should be called when the page is loaded, and every time
  * the page is resized.
@@ -84,10 +137,16 @@ function setupPage() {
     var profileContainer = $("#profile-container");
     var profileImageContainer = $("#profile-image-container");
 
-    console.log(WURFL);
+    var name = $("#name");
+    var school = $("#school");
+    var work = $(".work");
+    var resume = $("#resume");
+    var icon = $(".icon");
 
     setProfileHeight(profile);
+    setProfileImageWidth(profileImage);
     setProfileMargins(profileImage, profileInformation);
+    setProfileFontSize(name, school, work, resume, icon);
     setProfileImageContainerWidth(profileImageContainer);
     centerProfile(profile);
     centerProfileContainer(profile, profileContainer);

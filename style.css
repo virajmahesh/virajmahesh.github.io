@@ -31,7 +31,6 @@ body {
     height: 340px;
     z-index: 11;
     position: absolute;
-    /*top: calc((100% - 340px)/2);*/
     background: rgba(0, 0, 0, 0.6);
 }
 
@@ -81,7 +80,7 @@ p {
     margin-bottom: 30px;
 }
 
-#work {
+.work {
     height: 25px;
     font-size: 24px;
     font-weight: 300;
