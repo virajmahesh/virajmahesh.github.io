@@ -31,7 +31,7 @@ body {
     height: 340px;
     z-index: 11;
     position: absolute;
-    top: calc((100% - 340px)/2);
+    /*top: calc((100% - 340px)/2);*/
     background: rgba(0, 0, 0, 0.6);
 }
 
@@ -91,12 +91,13 @@ p {
 a {
     color: inherit;
     text-decoration: none;
+    margin: 0;
 }
 
 .icon {
     display: inline-block;
     vertical-align: middle;
-    margin-left: 5px;
+    margin-left: 2%;
 }
 
 #resume {
