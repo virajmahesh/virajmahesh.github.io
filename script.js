@@ -30,12 +30,14 @@ function centerProfile(profile) {
 /**
  * Set the profile height based on the type of device.
  */
-function setProfileHeight(profile) {
+function setProfileHeight(profile, profileInformation) {
     if (isMobile()) {
         profile.css('height', '100%');
     }
     else {
-        profile.css('height', '340px');
+        // Use the profile information height to determine the profile height.
+        height = Math.max(340, profileInformation.height() + 60);
+        profile.css('height', height);
     }
 }
 
@@ -94,12 +96,15 @@ function setProfileFontSize(name, school, work, resume, icon) {
     if (isMobile()) {
         name.css('font-size', '10vw');
         name.css('height', '10vw');
+        name.css('margin-bottom', '4.0vw');
 
         school.css('font-size','7.77vw');
         school.css('height','7.77vw');
+        school.css('margin-bottom', '3.5vw');
 
         work.css('font-size', '3.75vw');
         work.css('height', '3.75vw');
+        work.css('margin-bottom', '3.5vw');
 
         resume.css('font-size', '4.5vw');
         resume.css('height', '4.5vw');
@@ -110,12 +115,15 @@ function setProfileFontSize(name, school, work, resume, icon) {
     else {
         name.css('font-size', '45px');
         name.css('height', '45px');
+        name.css('margin-bottom', '3.5vh');
 
         school.css('font-size','35px');
         school.css('height','35px');
+        school.css('margin-bottom', '3.0vh');
 
         work.css('font-size', '24px');
         work.css('height', '24px');
+        work.css('margin-bottom', '3.0vh');
 
         resume.css('font-size', '30px');
         resume.css('height', '30px');
@@ -143,11 +151,11 @@ function setupPage() {
     var resume = $("#resume");
     var icon = $(".icon");
 
-    setProfileHeight(profile);
     setProfileImageWidth(profileImage);
     setProfileMargins(profileImage, profileInformation);
     setProfileFontSize(name, school, work, resume, icon);
     setProfileImageContainerWidth(profileImageContainer);
+    setProfileHeight(profile, profileInformation);
     centerProfile(profile);
     centerProfileContainer(profile, profileContainer);
 }
