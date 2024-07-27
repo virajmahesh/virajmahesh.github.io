@@ -1,38 +1,79 @@
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Viraj Mahesh - Senior Product Manager at YouTube, UC Berkeley graduate">
-    <meta name="author" content="Viraj Mahesh">
-    <meta name="keywords" content="Viraj Mahesh, YouTube, Product Manager, UC Berkeley, EECS">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Viraj Mahesh - Senior Product Manager at YouTube, UC Berkeley graduate"
+    />
+    <meta name="author" content="Viraj Mahesh" />
+    <meta
+      name="keywords"
+      content="Viraj Mahesh, YouTube, Product Manager, UC Berkeley, EECS"
+    />
     <title>Viraj Mahesh</title>
     <style>
       body {
-        font-size: x-large;
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .profile-image {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+      }
+      .content {
+        text-align: left;
       }
       a {
-        font-size: large;
+        font-size: 16px;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      @media (min-width: 768px) {
+        .container {
+          flex-direction: row;
+          align-items: flex-start;
+        }
+        .profile-image {
+          margin-right: 40px;
+          margin-bottom: 0;
+        }
+        .content {
+          text-align: left;
+        }
       }
     </style>
   </head>
 
   <body>
-    <div>
-      <p>
-        Hi, I'm Viraj Mahesh. I'm a Senior Product Manager at YouTube where I
-        work on the video watch page.
-      </p>
+    <div class="container">
+      <img
+        src="assets/profile.webp"
+        alt="Viraj Mahesh"
+        class="profile-image"
+      />
+      <div class="content">
+        <p>
+          Hi, I'm Viraj. I'm a Senior Product Manager at YouTube. Before YouTube, I received my B.S. in Electrical
+          Engineering and Computer Science from UC Berkeley.
+        </p>
+        <p>
+          <a href="assets/resume.pdf">Resume</a>.
+          <a href="https://linkedin.com/in/virajmahesh">LinkedIn</a>.
+          <a href="https://github.com/virajmahesh">GitHub</a>.
+        </p>
+      </div>
     </div>
-    <div>
-      <p>
-        Before YouTube, I received my B.S. in Electrical Engineering and
-        Computer Science from UC Berkeley.
-      </p>
-    </div>
-    <p>
-      <a href="assets/resume.pdf">Resume</a>.
-      <a href="https://linkedin.com/in/virajmahesh">LinkedIn</a>.
-      <a href="https://github.com/virajmahesh">GitHub</a>.
-    </p>
   </body>
 </html>
